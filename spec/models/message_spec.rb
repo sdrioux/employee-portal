@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 describe Message do
-  describe '.deliver' do
-    let(:message) { Message.new(body: 'Hello, there!') }
+  describe '.deliver!' do
+    let(:message)   { Message.new(body: 'Hello, there!') }
+    let(:sender)    { User.new }
+    let(:recipient) { User.new }
     
     context 'when both the sender and recipient are specified' do
       it 'should set the sender of the message'
@@ -13,15 +15,21 @@ describe Message do
     end
 
     context 'when neither the sender or recipient is specified' do
-      it 'should raise an error'
+      it 'should raise an error' do
+        expect { message.deliver! }.to raise_error ArgumentError
+      end
     end
 
     context 'when only the sender is specified' do
-      it 'should raise an error'
+      it 'should raise an error' do
+        expect { message.deliver! sender: sender }.to raise_error ArgumentError
+      end   
     end
     
     context 'when only the recipient is specified' do
-      it 'should raise an error'
+      it 'should raise an error' do
+        expect { message.deliver! recipient: recipient }.to raise_error ArgumentError
+      end
     end
   end
 end
