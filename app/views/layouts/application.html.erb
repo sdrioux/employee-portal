@@ -21,44 +21,7 @@
   </head>
 
   <body>
-  	<nav class="top-bar">
-  	  <ul class="title-area">
-  	    <!-- Title Area -->
-  	    <li class="name">
-  	      <h1><a href="#">Employee Portal</a></h1>
-  	    </li>
-  	    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-  	    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-  	  </ul>
-      <section class='top-bar-section'>
-        <ul class="right">
-          <li class='divider hide-for-small'></li>
-          <% if current_user %>
-            <li>
-              <a class='messages-menu-item' href='#'>
-                <i class="general foundicon-inbox"></i>
-                Messages
-                <div class='message-count'>10</div>
-              </a>
-            </li>
-            <li class='divider'></li>
-            <li>
-              <%= link_to destroy_user_session_path, method: 'delete' do %>
-                <i class='general foundicon-lock'></i>
-                Sign out
-              <% end %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to new_user_session_path do %>
-                <i class='general foundicon-unlock'></i>
-                Sign in
-              <% end %>
-            </li>
-          <% end %>              
-        </ul>
-      </section>
-  	</nav>
+    <%= render :partial => 'shared/navbar' %>
 
     <div class='row'>
       <div class='small-12 small-centered columns'>
