@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
 
-  has_many :recieved_messages, class_name: 'Message', foreign_key: 'recipient_id'
+  has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
   has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id'
 
   def full_name
