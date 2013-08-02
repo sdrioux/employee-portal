@@ -1,0 +1,33 @@
+// Place all the styles related to the portal controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+	font-size: 2em;
+  margin-top: 20px;
+}
+
+.profile-image {
+  width: 200px;
+  margin: 0 auto;
+
+  img.profile {
+    border-radius: 300px;
+  }
+}
+
+.profile-info {
+  font-size: 1.5em;
+  
+  .name {    
+    font-weight: bold;
+
+    i { vertical-align: middle; }
+  }
+
+  .email {
+    margin-top: 10px;
+
+    i { vertical-align: middle; }
+  }
+}

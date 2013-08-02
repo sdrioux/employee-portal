@@ -22,20 +22,28 @@
 
   <body>
   	<nav class="top-bar">
-	  <ul class="title-area">
-	    <!-- Title Area -->
-	    <li class="name">
-	      <h1><a href="#">Employee Portal</a></h1>
-	    </li>
-	    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-	    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-	  </ul>
-	</nav>
-	<div class='row'>
-		<div class='small-12 small-centered columns'>
-      		<%= yield %>
-      	</div>
-	</div>
+  	  <ul class="title-area">
+  	    <!-- Title Area -->
+  	    <li class="name">
+  	      <h1><a href="#">Employee Portal</a></h1>
+  	    </li>
+  	    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+  	    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  	  </ul>
+  	</nav>
+
+    <div class='row'>
+      <div class='small-12 small-centered columns'>
+        <% if notice %><div class='alert-box'><%= notice %></div><% end %>
+        <% if alert %><div class='alert-box alert'><%= alert %></div><% end %>
+      </div>
+    </div>
+
+  	<div class='row'>
+  		<div class='small-12 small-centered columns'>
+    		<%= yield %>
+    	</div>
+  	</div>
 
     <%= javascript_include_tag "application" %>
   </body>

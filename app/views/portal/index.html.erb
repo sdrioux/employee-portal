@@ -1,0 +1,23 @@
+<div class='row'>
+  <div class='large-4 columns'>
+    <div class='profile-image'>
+      <%= profile_image_for_user(current_user) %>
+    </div>
+  </div>
+
+  <div class='large-8 columns'>
+  	<h1>Welcome to the portal, <%= current_user.first_name %>!</h1>
+  	
+    <div class='profile-info'>
+    	<div class='name'>
+        <i class="general foundicon-folder"></i>
+        <%= current_user.full_name %>
+      </div>
+    	<div class='email'>
+    		<i class="general foundicon-mail"></i>
+        <%= current_user.email %>
+    	</div>
+    </div>
+
+  </div>
+</div>
