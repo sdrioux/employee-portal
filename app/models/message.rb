@@ -8,11 +8,13 @@ class Message < ActiveRecord::Base
 
   # Deliver this message from sender to recipient.
   #
-  # sender    - The User sending the message.
-  # recipient - The User receiving the message.
+  # sending    - The User sending the message.
+  # receiving  - The User receiving the message.
   #
   # Returns the delivered Message.
-  def deliver!(sender: nil, recipient: nil)
-    raise ArgumentError, "both sender and recipient must be specified" unless sender && recipient
+  def deliver!(sending: nil, receiving: nil)
+    raise ArgumentError, "both sender and recipient must be specified" unless sending && receiving
+
+    #self.recipient = 
   end
 end
