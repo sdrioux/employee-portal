@@ -17,5 +17,7 @@ class Message < ActiveRecord::Base
 
     self.sender = sending
     self.recipient = receiving
+
+    save
   end
 end
