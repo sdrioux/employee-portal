@@ -33,13 +33,29 @@
       <section class='top-bar-section'>
         <ul class="right">
           <li class='divider hide-for-small'></li>
-          <li>
-            <a class='messages-menu-item' href='#'>
-              <i class="general foundicon-inbox"></i>
-              Messages
-              <div class='message-count'>10</div>
-            </a>
-          </li>
+          <% if current_user %>
+            <li>
+              <a class='messages-menu-item' href='#'>
+                <i class="general foundicon-inbox"></i>
+                Messages
+                <div class='message-count'>10</div>
+              </a>
+            </li>
+            <li class='divider'></li>
+            <li>
+              <%= link_to destroy_user_session_path, method: 'delete' do %>
+                <i class='general foundicon-lock'></i>
+                Sign out
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <i class='general foundicon-unlock'></i>
+                Sign in
+              <% end %>
+            </li>
+          <% end %>              
         </ul>
       </section>
   	</nav>
